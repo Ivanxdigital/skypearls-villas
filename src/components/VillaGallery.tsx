@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 
+// Import images as URLs
+const frontVilla = new URL('../assets/images/Front of Villa.JPG', import.meta.url).href;
+const behindVilla = new URL('../assets/images/Behind the Villa.JPG', import.meta.url).href;
+const bedroom = new URL('../assets/images/Bedroom.JPG', import.meta.url).href;
+const bathroom = new URL('../assets/images/Bathroom.JPG', import.meta.url).href;
+const poolSide = new URL('../assets/images/Pool Side of the Villa.JPG', import.meta.url).href;
+const outdoorKitchen = new URL('../assets/images/Outdoor Kitchen.JPG', import.meta.url).href;
+const sunkenLivingRoom = new URL('../assets/images/Sunken Living Room.JPG', import.meta.url).href;
+
 interface GalleryImage {
   id: number;
   src: string;
@@ -13,50 +22,50 @@ export const VillaGallery = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [activeImage, setActiveImage] = useState<GalleryImage | null>(null);
 
-  // Gallery images data with paths relative to the public folder
+  // Gallery images data
   const galleryImages: GalleryImage[] = [
     {
       id: 1,
-      src: '/src/assets/images/Front of Villa.JPG',
+      src: frontVilla,
       alt: "Front view of Skypearls Villa",
       description: "Modern minimalist facade with signature arched windows and palm surroundings",
       featured: true
     },
     {
       id: 2,
-      src: '/src/assets/images/Behind the Villa.JPG',
+      src: behindVilla,
       alt: "Back view of Skypearls Villa",
       description: "Rear view showcasing the arched entryways and lush landscaping",
       featured: true
     },
     {
       id: 3,
-      src: '/src/assets/images/Pool Side of the Villa.JPG',
+      src: poolSide,
       alt: "Pool side of Skypearls Villa",
       description: "Private plunge pool with glass barrier and tropical palm views",
       featured: true
     },
     {
       id: 4,
-      src: '/src/assets/images/Bedroom.JPG',
+      src: bedroom,
       alt: "Bedroom of Skypearls Villa",
       description: "Serene bedroom with natural light and premium finishes"
     },
     {
       id: 5,
-      src: '/src/assets/images/Bathroom.JPG',
+      src: bathroom,
       alt: "Bathroom of Skypearls Villa",
       description: "Minimalist bathroom with high-end fixtures and natural materials"
     },
     {
       id: 6,
-      src: '/src/assets/images/Outdoor Kitchen.JPG',
+      src: outdoorKitchen,
       alt: "Kitchen of Skypearls Villa",
       description: "Gourmet kitchenette with SMEG appliances and designer accents"
     },
     {
       id: 7,
-      src: '/src/assets/images/Sunken Living Room.JPG',
+      src: sunkenLivingRoom,
       alt: "Sunken living room of Skypearls Villa",
       description: "Intimate sunken living area with custom lighting and comfort",
       featured: true
