@@ -10,6 +10,14 @@ interface YouTubeEvent {
   }
 }
 
+// Define YouTube player state change event interface
+interface YouTubeStateChangeEvent {
+  data: number;
+  target: {
+    playVideo: () => void;
+  }
+}
+
 export const Hero = () => {
   const youtubeContainerRef = useRef<HTMLDivElement>(null);
   
@@ -41,6 +49,13 @@ export const Hero = () => {
             event.target.setPlaybackRate(0.8);
             event.target.mute();
             event.target.playVideo();
+          },
+          // Add onStateChange event to ensure the video loops
+          onStateChange: (event: YouTubeStateChangeEvent) => {
+            // If the video ends (state = 0), restart it
+            if (event.data === 0) {
+              event.target.playVideo();
+            }
           }
         }
       });
