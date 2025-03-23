@@ -122,7 +122,7 @@ export const VillaGallery = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <h3 className="text-white text-xl font-semibold">{featuredImages[0].alt}</h3>
               <p className="text-gray-300 mt-1">{featuredImages[0].description}</p>
@@ -144,7 +144,7 @@ export const VillaGallery = () => {
                 />
               </div>
               {/* Unified overlay style for all images */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <h3 className="text-white text-lg font-medium">{image.alt}</h3>
                 <p className="text-gray-300 text-sm mt-1 line-clamp-2">{image.description}</p>
