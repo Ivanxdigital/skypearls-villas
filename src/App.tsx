@@ -4,6 +4,7 @@ import { PropertyShowcase } from './components/PropertyShowcase';
 import { Investment } from './components/Investment';
 import { Location } from './components/Location';
 import { Contact } from './components/Contact';
+import { ConstructionProgress } from './components/ConstructionProgress';
 import { MessageCircle } from 'lucide-react';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
     <div className="min-h-screen bg-charcoal">
       <Hero />
       <PropertyShowcase />
+      <ConstructionProgress />
       <Investment />
       <Location />
       <Contact />
@@ -47,7 +49,7 @@ function App() {
       <head>
         <title>Skypearls Villas | Luxury Smart Homes in Siargao</title>
         <meta name="description" content="Experience the future of tropical living with Skypearls Villas in Siargao. Smart home luxury villas with premium investment potential." />
-        <meta name="keywords" content="Siargao property, smart homes, luxury villas, property investment, Philippines real estate" />
+        <meta name="keywords" content="Siargao property, smart homes, luxury villas, property investment, Philippines real estate, construction progress" />
         
         {/* Open Graph */}
         <meta property="og:title" content="Skypearls Villas | Luxury Smart Homes in Siargao" />

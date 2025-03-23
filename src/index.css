@@ -61,6 +61,16 @@
     @apply top-3 text-gray-400;
   }
   
+  /* Hide scrollbar for touch devices */
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+  
   /* Animations */
   @keyframes appear {
     from { opacity: 0; transform: scale(0.9); }
