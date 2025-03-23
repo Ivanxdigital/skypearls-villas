@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { Hero } from './components/Hero';
 import { PropertyShowcase } from './components/PropertyShowcase';
+import { ConstructionProgress } from './components/ConstructionProgress';
+import { VillaGallery } from './components/VillaGallery';
 import { Investment } from './components/Investment';
 import { Location } from './components/Location';
 import { Contact } from './components/Contact';
-import { ConstructionProgress } from './components/ConstructionProgress';
 import { MessageCircle } from 'lucide-react';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
       <Hero />
       <PropertyShowcase />
       <ConstructionProgress />
+      <VillaGallery />
       <Investment />
       <Location />
       <Contact />
