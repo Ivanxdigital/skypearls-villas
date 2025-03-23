@@ -161,18 +161,6 @@ export const VillaGallery = () => {
             </div>
           ))}
         </div>
-        
-        {/* Call to action */}
-        <div className="mt-16 text-center">
-          <div className="inline-block bg-black/30 backdrop-blur-sm p-6 rounded-xl border border-gray-800 max-w-xl mx-auto">
-            <p className="text-gray-300 mb-4">
-              Experience our villas virtually or schedule an in-person visit
-            </p>
-            <button className="px-8 py-3 bg-gradient-to-r from-teal to-sand text-charcoal font-medium rounded-lg hover:shadow-lg hover:from-sand hover:to-teal transition-all duration-300">
-              Schedule Virtual Tour
-            </button>
-          </div>
-        </div>
       </div>
       
       {/* Lightbox for full-size image viewing */}
