@@ -43,8 +43,8 @@ export const Contact = () => {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-b from-charcoal/95 to-charcoal">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="section-padding bg-charcoal/95">
+      <div className="container mx-auto">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-20 font-poppins">
           Get in <span className="text-sand">Touch</span>
         </h2>

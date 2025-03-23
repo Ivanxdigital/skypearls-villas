@@ -68,7 +68,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-[100svh] w-full overflow-hidden">
+    <section id="hero" className="relative h-[100svh] w-full overflow-hidden">
       {/* YouTube container */}
       <div 
         ref={youtubeContainerRef} 

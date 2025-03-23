@@ -6,6 +6,7 @@ import { VillaGallery } from './components/VillaGallery';
 import { Investment } from './components/Investment';
 import { Location } from './components/Location';
 import { Contact } from './components/Contact';
+import { Navigation } from './components/Navigation';
 import { MessageCircle } from 'lucide-react';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-charcoal">
+      <Navigation />
       <Hero />
       <PropertyShowcase />
       <ConstructionProgress />

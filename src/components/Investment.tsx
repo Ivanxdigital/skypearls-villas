@@ -3,7 +3,7 @@ import { TrendingUp, Users, Building, Palmtree as PalmTree } from 'lucide-react'
 
 export const Investment = () => {
   return (
-    <section className="section-padding bg-gradient-to-b from-charcoal to-charcoal/95">
+    <section id="investment" className="section-padding bg-gradient-to-b from-charcoal to-charcoal/95">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-16">
           Investment <span className="text-sand">Potential</span>

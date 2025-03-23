@@ -80,6 +80,53 @@
   .animate-appear {
     animation: appear 0.3s ease-out forwards;
   }
+
+  /* Navigation Animations */
+  .nav-link-indicator {
+    @apply absolute bottom-0 left-0 h-0.5 bg-sand rounded-full w-0 transition-all duration-300;
+  }
+  
+  .nav-link:hover .nav-link-indicator,
+  .nav-link.active .nav-link-indicator {
+    @apply w-full;
+  }
+
+  .nav-item {
+    @apply relative overflow-hidden;
+  }
+
+  .nav-item-enter {
+    @apply opacity-0 -translate-y-4;
+  }
+
+  .nav-item-enter-active {
+    @apply opacity-100 translate-y-0 transition-all duration-300;
+  }
+
+  .nav-item-exit {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .nav-item-exit-active {
+    @apply opacity-0 translate-y-4 transition-all duration-300;
+  }
+  
+  /* Enhanced mobile menu animation */
+  @keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .mobile-nav-item {
+    animation: slideIn 0.3s ease forwards;
+    opacity: 0;
+  }
+  
+  .mobile-nav-item:nth-child(1) { animation-delay: 0.1s; }
+  .mobile-nav-item:nth-child(2) { animation-delay: 0.2s; }
+  .mobile-nav-item:nth-child(3) { animation-delay: 0.3s; }
+  .mobile-nav-item:nth-child(4) { animation-delay: 0.4s; }
+  .mobile-nav-item:nth-child(5) { animation-delay: 0.5s; }
 }
 
 /* Custom scrollbar */

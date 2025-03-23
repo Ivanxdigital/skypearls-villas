@@ -26,8 +26,8 @@ const attractions = [
 
 export const Location = () => {
   return (
-    <section className="section-padding bg-charcoal/95">
-      <div className="max-w-7xl mx-auto">
+    <section id="location" className="section-padding bg-gradient-to-t from-charcoal to-charcoal/95">
+      <div className="container mx-auto">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-16">
           Prime <span className="text-sand">Location</span>
         </h2>
