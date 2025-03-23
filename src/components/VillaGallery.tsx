@@ -26,7 +26,8 @@ export const VillaGallery = () => {
       id: 2,
       src: '/src/assets/images/Behind the Villa.JPG',
       alt: "Back view of Skypearls Villa",
-      description: "Rear view showcasing the arched entryways and lush landscaping"
+      description: "Rear view showcasing the arched entryways and lush landscaping",
+      featured: true
     },
     {
       id: 3,
@@ -95,9 +96,9 @@ export const VillaGallery = () => {
   };
 
   return (
-    <section id="villa-gallery" className="py-24 bg-gradient-to-b from-charcoal to-charcoal/95">
+    <section id="villa-gallery" className="py-24 bg-charcoal">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Studio <span className="text-sand">Villa</span> Showcase
           </h2>
@@ -107,81 +108,46 @@ export const VillaGallery = () => {
           </p>
         </div>
         
-        {/* Featured images - larger display */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-          {/* Larger feature image */}
+        {/* Main gallery grid - unified layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Main feature image - larger */}
           <div 
-            className="md:col-span-8 relative group overflow-hidden rounded-xl shadow-xl cursor-pointer"
+            className="lg:col-span-2 relative group cursor-pointer overflow-hidden rounded-2xl"
             onClick={() => openLightbox(featuredImages[0])}
           >
-            <div className="aspect-video overflow-hidden">
+            <div className="aspect-[16/9] overflow-hidden">
               <img 
                 src={featuredImages[0].src} 
                 alt={featuredImages[0].alt} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <h3 className="text-white text-xl font-semibold">{featuredImages[0].alt}</h3>
-              <p className="text-gray-300 mt-2">{featuredImages[0].description}</p>
+              <p className="text-gray-300 mt-1">{featuredImages[0].description}</p>
             </div>
           </div>
           
-          {/* Secondary featured images */}
-          <div className="md:col-span-4 grid grid-rows-2 gap-8">
-            {featuredImages.slice(1, 3).map((image) => (
-              <div 
-                key={image.id} 
-                className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer"
-                onClick={() => openLightbox(image)}
-              >
-                <div className="aspect-square overflow-hidden">
-                  <img 
-                    src={image.src} 
-                    alt={image.alt} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-white text-lg font-medium">{image.alt}</h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Section divider */}
-        <div className="relative my-12">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-700"></div>
-          </div>
-          <div className="relative flex justify-center">
-            <span className="bg-charcoal px-4 text-sm text-gray-400">EXPLORE MORE</span>
-          </div>
-        </div>
-        
-        {/* Regular gallery thumbnails */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 mt-12">
-          {galleryImages.filter(img => !img.featured).map((image) => (
+          {/* Grid of remaining images - uniform sizing */}
+          {galleryImages.filter(img => img.id !== featuredImages[0].id).map((image) => (
             <div 
               key={image.id} 
-              className="relative group overflow-hidden rounded-lg shadow-md cursor-pointer transform transition-transform duration-300 hover:-translate-y-1"
+              className="relative group cursor-pointer overflow-hidden rounded-2xl"
               onClick={() => openLightbox(image)}
             >
-              <div className="aspect-[4/3] overflow-hidden bg-gray-800">
+              <div className="aspect-square overflow-hidden">
                 <img 
                   src={image.src} 
                   alt={image.alt} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <div className="p-4 w-full">
-                  <h3 className="text-white text-sm font-medium">{image.alt}</h3>
-                  <p className="text-gray-300 text-xs mt-1 line-clamp-2">{image.description}</p>
-                </div>
+              {/* Unified overlay style for all images */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <h3 className="text-white text-lg font-medium">{image.alt}</h3>
+                <p className="text-gray-300 text-sm mt-1 line-clamp-2">{image.description}</p>
               </div>
             </div>
           ))}
@@ -189,20 +155,22 @@ export const VillaGallery = () => {
         
         {/* Call to action */}
         <div className="mt-16 text-center">
-          <p className="text-gray-300 mb-4">
-            Experience our villas virtually or schedule an in-person visit
-          </p>
-          <button className="px-8 py-3 bg-gradient-to-r from-teal to-sand text-charcoal font-medium rounded-lg shadow-lg hover:shadow-xl hover:opacity-90 transition-all duration-300">
-            Schedule Virtual Tour
-          </button>
+          <div className="inline-block bg-black/30 backdrop-blur-sm p-6 rounded-xl border border-gray-800 max-w-xl mx-auto">
+            <p className="text-gray-300 mb-4">
+              Experience our villas virtually or schedule an in-person visit
+            </p>
+            <button className="px-8 py-3 bg-gradient-to-r from-teal to-sand text-charcoal font-medium rounded-lg hover:shadow-lg hover:from-sand hover:to-teal transition-all duration-300">
+              Schedule Virtual Tour
+            </button>
+          </div>
         </div>
       </div>
       
       {/* Lightbox for full-size image viewing */}
       {lightboxOpen && activeImage && (
-        <div className="fixed inset-0 z-50 bg-charcoal/95 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4">
           <button
-            className="absolute top-4 right-4 text-white p-2 rounded-full bg-charcoal/50 hover:bg-charcoal/80 transition-colors z-10"
+            className="absolute top-6 right-6 text-white p-2 rounded-full bg-charcoal/70 hover:bg-charcoal transition-colors z-10"
             onClick={closeLightbox}
           >
             <X className="w-6 h-6" />
@@ -210,14 +178,14 @@ export const VillaGallery = () => {
           
           {/* Navigation buttons */}
           <button
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-white p-4 rounded-full bg-charcoal/50 hover:bg-charcoal/80 transition-colors text-4xl"
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white p-4 rounded-full bg-charcoal/50 hover:bg-charcoal/80 transition-colors text-4xl z-10"
             onClick={prevImage}
           >
             &lsaquo;
           </button>
           
           <button
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-white p-4 rounded-full bg-charcoal/50 hover:bg-charcoal/80 transition-colors text-4xl"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white p-4 rounded-full bg-charcoal/50 hover:bg-charcoal/80 transition-colors text-4xl z-10"
             onClick={nextImage}
           >
             &rsaquo;
