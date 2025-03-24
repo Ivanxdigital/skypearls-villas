@@ -7,6 +7,7 @@ import { Investment } from './components/Investment';
 import { Location } from './components/Location';
 import { Contact } from './components/Contact';
 import { Navigation } from './components/Navigation';
+import { Footer } from './components/Footer';
 import { MessageCircle } from 'lucide-react';
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
       <Investment />
       <Location />
       <Contact />
+      <Footer />
       
       {/* Floating Contact Button */}
       <button 
