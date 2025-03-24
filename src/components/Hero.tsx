@@ -95,7 +95,7 @@ export const Hero = () => {
           Where smart home technology meets island serenity.
         </p>
         
-        <button className="btn-primary w-full sm:w-auto">
+        <button className="bg-black/70 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:bg-black/90 hover:shadow-xl shadow-md backdrop-blur-sm border border-white/10 w-full sm:w-auto">
           Schedule a Virtual Tour
         </button>
         
