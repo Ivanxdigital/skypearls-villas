@@ -76,7 +76,7 @@ export const Navigation = () => {
               handleNavLinkClick('#hero');
             }}
           >
-            <span className="text-sand">Sky</span>pearls
+            <span className="text-sand">Sky</span>pearls Villas
           </a>
 
           {/* Desktop Menu */}
