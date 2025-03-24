@@ -52,16 +52,18 @@ export const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-xs text-gray-500 mb-4 sm:mb-0 text-center sm:text-left">
-            © {currentYear} Skypearls Villas. All rights reserved.
-          </p>
-          <div className="flex items-center space-x-4">
-            <a href="#" className="text-xs text-gray-500 hover:text-sand transition-colors duration-300">Privacy Policy</a>
-            <a href="#" className="text-xs text-gray-500 hover:text-sand transition-colors duration-300">Terms of Service</a>
-            <p className="text-xs text-gray-500 flex items-center">
-              Made with <Heart size={12} className="mx-1 text-sand" /> in Siargao
+        <div className="border-t border-white/5 pt-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center">
+            <p className="text-xs text-gray-500 mb-5 sm:mb-0 text-center sm:text-left">
+              © {currentYear} Skypearls Villas. All rights reserved.
             </p>
+            <div className="flex flex-wrap justify-center gap-6">
+              <a href="#" className="text-xs text-gray-500 hover:text-sand transition-colors duration-300">Privacy Policy</a>
+              <a href="#" className="text-xs text-gray-500 hover:text-sand transition-colors duration-300">Terms of Service</a>
+              <div className="flex items-center text-xs text-gray-500">
+                Made with <Heart size={12} className="mx-1 text-sand" fill="currentColor" /> in Siargao
+              </div>
+            </div>
           </div>
         </div>
       </div>
