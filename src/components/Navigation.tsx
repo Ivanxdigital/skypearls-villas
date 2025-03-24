@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Home, Building, LineChart, Map, MessageSquare } from 'lucide-react';
+import logoSvg from '../assets/images/logo.svg';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,6 +77,7 @@ export const Navigation = () => {
               handleNavLinkClick('#hero');
             }}
           >
+            <img src={logoSvg} alt="Skypearls Logo" className="h-8 w-auto mr-2" />
             <span className="text-sand">Sky</span>pearls Villas
           </a>
 
@@ -123,6 +125,12 @@ export const Navigation = () => {
         }`}
       >
         <div className="flex flex-col items-center justify-center h-full">
+          <div className="flex items-center justify-center mb-10">
+            <img src={logoSvg} alt="Skypearls Logo" className="h-12 w-auto mr-3" />
+            <span className="text-3xl font-bold font-poppins">
+              <span className="text-sand">Sky</span>pearls Villas
+            </span>
+          </div>
           <ul className="space-y-8 py-8 text-center">
             {navLinks.map((link, index) => (
               <li key={link.name} className="mobile-nav-item">
